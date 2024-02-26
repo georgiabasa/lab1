@@ -13,7 +13,7 @@ def more(text):
 
 url=input("Enter a URL: ")
 
-if not url.startswitch("http://"):
+if not url.startswith("http://"):
     url = "http://" + url
 
 with requests.get(url) as response:  # το αντικείμενο response
@@ -28,3 +28,12 @@ with requests.get(url) as response:  # το αντικείμενο response
         print(f"The server is {server}")
     else:
         print("No server found")
+
+    cookies = response.headers.get("Set-Cookie")
+
+    if cookies:
+        cookies=cookies.split(';')
+        for cookie in cookies:
+            print(f"The cookie is {cookie}")
+    else:
+        print("No cookie found")
