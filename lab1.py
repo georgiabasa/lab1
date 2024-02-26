@@ -43,7 +43,7 @@ with requests.get(url) as response:  # το αντικείμενο response
         print(f"The webpage is using cookies")
         cookies=cookies.split(';')
         for cookie in cookies:
-            #onoma ka8e cookie kai expiration date se opoio exei
+            #(c) onoma ka8e cookie kai expiration date se opoio exei
             print(f"The cookie is {cookie}")
     else:
         print("No cookie found")
