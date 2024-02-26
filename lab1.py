@@ -1,5 +1,6 @@
 import requests  # εισαγωγή της βιβλιοθήκης
 
+
 def more(text):
     count = 0
     for line in text.split('\n'):
@@ -10,8 +11,20 @@ def more(text):
             if reply == 'n':
                 break
 
-url = 'http://google.com/'  # προσδιορισμός του url
+url=input("Enter a URL: ")
+
+if not url.startswitch("http://"):
+    url = "http://" + url
 
 with requests.get(url) as response:  # το αντικείμενο response
     #html = response.text
     #more(html)
+
+    print(f"Website headers are {url} \n, {response.headers} \n\n")
+
+    server=response.headers.get("Server")
+
+    if server:
+        print(f"The server is {server}")
+    else:
+        print("No server found")
