@@ -13,5 +13,5 @@ def more(text):
 url = 'http://google.com/'  # προσδιορισμός του url
 
 with requests.get(url) as response:  # το αντικείμενο response
-    html = response.text
-    more(html)
+    #html = response.text
+    #more(html)
